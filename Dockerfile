@@ -7,7 +7,7 @@ COPY emnist-balanced-mapping.txt /workdir/
 
 WORKDIR /workdir
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -q -r requirements.txt
 
 # Run the application
 CMD ["uvicorn", "myapp.main:app", "--host", "0.0.0.0", "--port", "8000"]
